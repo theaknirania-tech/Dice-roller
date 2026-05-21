@@ -1,14 +1,4 @@
-# ============================================================
-#  🎲 Python Dice Roller — Tkinter Project
-#  Beginner-Friendly | Dark UI | Animation | Sound
-# ============================================================
-#
-#  Install dependencies first:
-#    pip install Pillow playsound
-#
-#  Run:
-#    python dice_roller.py
-# ============================================================
+
 
 import tkinter as tk
 from tkinter import ttk, font
@@ -45,7 +35,6 @@ ANIMATION_STEPS = 18         # How many frames during roll
 ANIMATION_DELAY = 55         # Milliseconds between frames
 
 
-# ─── Draw a single die face on a Canvas ──────────────────────
 DOT_POSITIONS = {
     1: [(50, 50)],
     2: [(28, 28), (72, 72)],
@@ -60,7 +49,7 @@ def draw_die(canvas, value, x=0, y=0, size=100, color="#7c3aed"):
     canvas.delete("all")
 
     # Die body with rounded rectangle
-    r = int(size * 0.18)   # corner radius
+    r = int(size * 0.18)   
     canvas.create_polygon(
         x+r, y,
         x+size-r, y,
@@ -76,7 +65,7 @@ def draw_die(canvas, value, x=0, y=0, size=100, color="#7c3aed"):
         width=2,
     )
 
-    # Shine highlight (top-left triangle effect)
+    
     canvas.create_oval(
         x+5, y+5,
         x+size//2, y+size//2,
@@ -370,7 +359,7 @@ class DiceRollerApp:
         )
         self._no_history_label.pack(expand=True, pady=30)
 
-    # ── Rolling Logic ────────────────────────────────────────
+    
     def _roll(self):
         """Start the dice rolling animation."""
         if self.is_rolling:
